@@ -61,10 +61,11 @@ def main():
                         else:
                             try:
                                 cursor.execute("INSERT INTO orders VALUES (%s, %s, %s, %s, %s)",
-                                           (int(row[0]), row[1], int(row[2]), row[3], row[4]))
+                                               (int(row[0]), row[1], int(row[2]), row[3], row[4]))
                                 conn.commit()
-                            except psycopg2.DatabaseError:
+                            except psycopg2.DatabaseError as e:
                                 conn.rollback()
+                                print("Error:", e)
                                 continue
 
     finally:
