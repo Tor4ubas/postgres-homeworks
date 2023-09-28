@@ -14,9 +14,10 @@ CREATE TABLE customers (
 );
 CREATE TABLE orders (
     order_id INT PRIMARY KEY,
-    customer_id VARCHAR(5) REFERENCES customers(customer_id) NOT NULL,
-    employee_id int REFERENCES employees(employee_id) NOT NULL,
+    customer_id INT NOT NULL,
+    employee_id INT NOT NULL,
     order_date DATE,
     ship_city VARCHAR(50),
-   UNIQUE(customer_id)
+FOREIGN KEY (customer_id) REFERENCES customers(id),
+FOREIGN KEY (employee_id) REFERENCES employees(id)
 )
