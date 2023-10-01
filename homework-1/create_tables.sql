@@ -18,6 +18,4 @@ CREATE TABLE orders (
     employee_id INT NOT NULL,
     order_date DATE,
     ship_city VARCHAR(50),
-FOREIGN KEY (customer_id) REFERENCES customers(id),
-FOREIGN KEY (employee_id) REFERENCES employees(id)
 )
