@@ -13,9 +13,9 @@ CREATE TABLE customers (
     contact_name VARCHAR(50)
 );
 CREATE TABLE orders (
-    order_id INT PRIMARY KEY,
-    customer_id INT NOT NULL,
+    order_id INT NOT NULL PRIMARY KEY,
+    customer_id VARCHAR(5),
     employee_id INT NOT NULL,
     order_date DATE,
-    ship_city VARCHAR(50),
-)
+    ship_city VARCHAR(50)
+);
